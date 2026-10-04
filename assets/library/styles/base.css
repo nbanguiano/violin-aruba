@@ -1,0 +1,79 @@
+/* AFEX page foundations v0.1. Body = 16px + 3px; never reduce for mobile. */
+@layer reset, tokens, foundation, template, theme, preview;
+@layer reset {
+  *, *::before, *::after { box-sizing: border-box; }
+  body, h1, h2, h3, p, figure, blockquote, dl, dd { margin: 0; }
+  img, svg { display: block; max-width: 100%; }
+  button, input, select { font: inherit; }
+  button, a { -webkit-tap-highlight-color: transparent; }
+  [hidden] { display: none !important; }
+}
+@layer tokens {
+  :root {
+    --text-body: 1.1875rem; /* 19px at default browser settings */
+    --text-small: 1rem; /* 16px: secondary labels only */
+    --text-lead: clamp(1.3125rem, 1.8vw, 1.625rem);
+    --text-h1: clamp(3.25rem, 6.7vw, 6.375rem);
+    --text-h2: clamp(2.5rem, 4.3vw, 4.25rem);
+    --text-h3: clamp(1.625rem, 2.3vw, 2.25rem);
+    --page-width: 1240px;
+    --gutter: clamp(22px, 4vw, 64px);
+    /* Shared layout rhythm: Event A is the owner-approved reference. */
+    --space-eyebrow: 1.625rem; /* 26px: callout → heading */
+    --space-heading: 1.5rem; /* 24px: heading → supporting copy */
+    --space-lead: 2.125rem; /* 34px: lead → next content */
+    --space-block: 2.75rem; /* 44px: separate content groups */
+    --space-card-gap: 1.375rem; /* 22px: peer cards and icon → copy */
+    --space-column-gap: 3.75rem; /* 60px: major columns */
+    --space-card-x: 1.625rem; /* 26px: card sides */
+    --space-card-top: 2.125rem; /* 34px: card top */
+    --space-card-bottom: 1.875rem; /* 30px: card bottom */
+    --space-hero-top: 4.375rem; /* 70px */
+    --space-hero-bottom: 5.25rem; /* 84px */
+    --section-space: 5.375rem; /* 86px */
+    --font-body: 'Trebuchet MS', sans-serif;
+    --font-display: Georgia, serif;
+    --paper: #f7f5ed; --surface: #ffffff; --ink: #202e2a;
+    --muted: #53605a; --accent: #d8ed8b; --on-accent: #20362b;
+    --strong: #233f32; --on-strong: #faf9f0; --line: #c5ccbf;
+    --radius: 2px;
+  }
+  @media (max-width:720px) {
+    :root {
+      --space-column-gap: 1.875rem;
+      --space-card-x: 1.375rem;
+      --space-card-top: 1.75rem;
+      --space-card-bottom: 1.75rem;
+      --space-hero-top: 2.5rem;
+      --space-hero-bottom: 3.5rem;
+      --section-space: 3.5rem;
+    }
+  }
+}
+@layer foundation {
+  html { scroll-behavior: smooth; scroll-padding-top: 110px; }
+  body { font-family: var(--font-body); font-size: var(--text-body); line-height: 1.65; color: var(--ink); background: var(--paper); }
+  h1, h2, h3 { font-family: var(--font-display); font-weight: 500; line-height: 1.06; letter-spacing: -.045em; text-wrap: balance; overflow-wrap: anywhere; }
+  h1 { font-size: var(--text-h1); }
+  h2 { font-size: var(--text-h2); }
+  h3 { font-size: var(--text-h3); line-height: 1.2; }
+  p { text-wrap: pretty; }
+  a { color: inherit; text-underline-offset: .2em; }
+  button { cursor: pointer; }
+  a, button, summary, select { touch-action: manipulation; }
+  :focus-visible { outline: 3px solid var(--ink); outline-offset: 5px; }
+  ::selection { background: var(--accent); color: var(--on-accent); }
+  .container { width: min(var(--page-width), calc(100% - var(--gutter) * 2)); margin-inline: auto; }
+  .section { padding-block: var(--section-space); }
+  .eyebrow { font-size: var(--text-small); font-weight: 700; letter-spacing: .13em; text-transform: uppercase; line-height: 1.5; }
+  .lead { font-size: var(--text-lead); line-height: 1.5; }
+  .visually-hidden { position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip-path:inset(50%); white-space:nowrap; border:0; }
+  .muted { color: var(--muted); }
+  .button { min-height: 54px; display: inline-flex; align-items: center; justify-content: center; gap: 24px; padding: 14px 25px; border: 1px solid transparent; border-radius: var(--radius); background: var(--strong); color: var(--on-strong); font-size: var(--text-body); font-weight: 700; line-height: 1.3; text-decoration: none; transition: transform .18s ease, box-shadow .18s ease; }
+  .button:hover { transform: translateY(-2px); box-shadow: 0 5px 0 color-mix(in srgb, var(--strong) 18%, transparent); }
+  .button--outline { border-color: var(--ink); background: transparent; color: var(--ink); }
+  .text-link { display: inline-flex; align-items: center; min-height: 48px; font-weight: 700; }
+  .skip-link { position: fixed; top: 10px; left: 10px; z-index: 100; padding: 12px 20px; background: var(--ink); color: var(--paper); transform: translateY(-200%); }
+  .skip-link:focus { transform: none; }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } *, *::before, *::after { animation: none !important; transition: none !important; } }
+}

@@ -1,0 +1,12 @@
+# Credentials and local tooling
+.env*
+!.env.example
+.vercel/
+node_modules/
+.DS_Store
+*.log
+
+# Internal work records (kept locally)
+WORK.md
+AGENTS.md
+screenshots/

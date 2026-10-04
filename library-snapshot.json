@@ -1,0 +1,10 @@
+{
+  "source": "AFEX Collection 04 shared website foundations (pinned local copy)",
+  "pinned": "2026-09-27 / Collection 04",
+  "sha256": {
+    "styles/base.css": "4cf39f2cf1b75d9cc26c6ba9c4aa28e8268a975846a957b04c5426c8fe31a474",
+    "styles/components.css": "1597b9a82440b10f566632b67db3ad632dd233b4dce3e6d5656b6b7474147aab",
+    "themes/classic.css": "87048f7248d2bd5a7f4c6f4595dd242e2b0a97284375e63b42a75d749993da1f",
+    "showcase.js": "9b664c2714fdb3c284fddd8e86ee3d9be2250075bb73eb3c0d1b15e9233072ac"
+  }
+}

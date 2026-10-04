@@ -1,0 +1,35 @@
+/* Classic: rounded contemporary hospitality, navy/teal, luminous soft depth. */
+@layer theme {
+ :root[data-theme="classic"] {
+  --font-display:'Avenir Next','Trebuchet MS',sans-serif;
+  --font-body:'Avenir Next','Trebuchet MS',sans-serif;
+  --heading-weight:750;
+  --paper:#101f2b; --surface:#142a38; --ink:#f4f5ed; --muted:#b7cbd0;
+  --accent:#86d7c6; --on-accent:#102e31; --strong:#eac783; --on-strong:#242617; --line:#405a65;
+  --radius:18px; --card-radius:18px; --panel-radius:32px; --button-radius:999px; --icon-radius:50%;
+  --panel-paper:#eef3f0; --panel-card:#ffffff; --panel-ink:#1b3541; --panel-muted:#526a72; --panel-line:#cad9d8; --panel-accent:#367d75;
+  --secondary-accent:#ad7360; --cta:#f0d69c; --cta-end:#d9b875; --on-cta:#292718;
+  --glass:#ffffff05; --bridge:#3b6670; --bridge-ink:#f2faf6; --shadow-ink:#000d19; --photo-surface:#dfe9e6;
+  --compare-bad:#f2d9cb; --compare-bad-ink:#68443c; --compare-good:#c5e6d8; --compare-good-ink:#234e43;
+  --hero-wash:radial-gradient(1100px 600px at 50% -10%,#86d7c62b,transparent 65%),radial-gradient(700px 400px at 50% 100%,#f0d69c0c,transparent 65%);
+  --media-wash:linear-gradient(145deg,#ffffff0c,#86d7c605);
+  --offer-wash:radial-gradient(ellipse at top,#eac78320,transparent 80%),linear-gradient(180deg,#192f3c,#101f2b);
+  --button-fill:linear-gradient(180deg,var(--cta),var(--cta-end)); --button-shadow:0 0 0 1px #f0d69c66,0 8px 30px #eac78330;
+  --card-shadow:0 4px 20px #00192e15;
+  --panel-shadow:0 32px 80px #00101f55;
+  --photo-shadow:0 18px 44px #001c3040;
+  --media-border-style:dashed; --badge-ink:#fff;
+ }
+ [data-theme="classic"] :is(h1,h2) {font-weight:750;letter-spacing:-.045em;}
+ [data-theme="classic"] h1 em {font-style:normal;color:var(--accent);}
+ [data-theme="classic"] .reference-event .hero h1 {font-size:clamp(3.25rem,5vw,4.625rem);}
+ [data-theme="classic"] .reference-event .video {box-shadow:0 20px 70px #00131d30;}
+ [data-theme="classic"] .reference-event .panel {border:1px solid #ffffff66;}
+ [data-theme="classic"] .reference-event .card {background:linear-gradient(145deg,#ffffff06,transparent);}
+ [data-theme="classic"] .reference-event .photo {border-radius:12px;}
+ [data-theme="classic"] .poster {background:linear-gradient(140deg,#2b6d73,#143343);color:#f5e7c7;border-radius:120px 120px 24px 24px;padding-top:80px;box-shadow:0 28px 70px #00152370;}
+ [data-theme="classic"] .poster__word {font-family:var(--font-display);font-style:normal;font-weight:700;}
+ [data-theme="classic"] .poster__top {padding-inline:20px;}
+ [data-theme="classic"] .ticket--featured {background:#203e46;}
+ [data-theme="classic"] .wordmark__symbol {color:var(--accent);}
+}
