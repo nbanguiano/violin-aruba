@@ -19,7 +19,14 @@ Plain HTML, CSS and JavaScript, with no external runtime dependencies or build s
 
 ## Local preview and tests
 
-Use Node.js 22.14 or newer:
+Clone the website repository and use Node.js 22.14 or newer:
+
+```sh
+git clone https://github.com/nbanguiano/violin-aruba.git
+cd violin-aruba
+```
+
+Start the local preview:
 
 ```sh
 node tests/preview.mjs
